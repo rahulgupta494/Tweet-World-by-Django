@@ -9,6 +9,9 @@ from django.contrib.auth import login
 def index(request):
     return render(request, 'index.html')
 
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def tweet_list(request):
     tweets = Tweet.objects.all().order_by('-created_at')
     return render(request, 'tweet_list.html', {'tweets': tweets})

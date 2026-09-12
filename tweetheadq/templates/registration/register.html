@@ -1,10 +1,49 @@
 {% extends "layout.html" %}
 
-{% block content %}
-<h2>Register form</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button class="btn btn-primary">Register</button>
-</form>
+{% block title %}
+Register
 {% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+<div class="card shadow-lg border-0 rounded-4 p-4"
+     style="max-width: 480px; width: 100%; background-color: #212529;">
+
+    <div class="card-body">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold mb-2">Create Account</h2>
+            <p class="text-secondary">
+                Join us and start sharing your tweets.
+            </p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit"
+                    class="btn btn-primary w-100 py-2 rounded-pill mt-2">
+                Create Account
+            </button>
+        </form>
+
+        <div class="text-center mt-4">
+            <p class="text-secondary mb-0">
+                Already have an account?
+                <a href="{% url 'login' %}" class="text-decoration-none">
+                    Login
+                </a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+{% endblock %}
+

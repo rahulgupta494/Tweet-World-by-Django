@@ -1,8 +1,31 @@
 {% extends "layout.html" %}
 
+{% block title %}
+Logged Out
+{% endblock %}
+
 {% block content %}
-<h2>Logged out </h2>
-<p>You have been logged out 
-    <a href="{% url 'login' %}">Login here</a>
-</p>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 75vh;"> <div class="text-center p-5 rounded-4 shadow-lg" style="max-width: 450px; width: 100%; background-color: #212529;">
+
+    <div class="mb-4">
+        <span class="fs-1">👋</span>
+    </div>
+
+    <h2 class="fw-bold mb-3">Logged Out</h2>
+
+    <p class="text-secondary mb-4">
+        You have been successfully logged out.
+        We hope to see you again soon!
+    </p>
+
+    <a href="{% url 'login' %}" 
+       class="btn btn-primary px-4 py-2 rounded-pill">
+        Login Again
+    </a>
+
+</div>
+
+</div>
+
 {% endblock %}

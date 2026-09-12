@@ -1,13 +1,52 @@
 {% extends "layout.html" %}
 
+{% block title %}
+Login
+{% endblock %}
+
 {% block content %}
-<h2>Login form</h2>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button class="btn btn-primary">Register</button>
-</form>
-<p>Dont have an account?
-    <a href="{% url 'register' %}">Register here</a>
-</p>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+
+<div class="card shadow-lg border-0 rounded-4 p-4"
+     style="max-width: 450px; width: 100%; background-color: #212529;">
+
+    <div class="card-body">
+
+        <div class="text-center mb-4">
+            <div class="fs-1 mb-2">👋</div>
+
+            <h2 class="fw-bold mb-2">Welcome Back</h2>
+
+            <p class="text-secondary">
+                Login to continue to your account.
+            </p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit"
+                    class="btn btn-primary w-100 py-2 rounded-pill mt-2">
+                Login
+            </button>
+        </form>
+
+        <div class="text-center mt-4">
+            <p class="text-secondary mb-0">
+                Don't have an account?
+                <a href="{% url 'register' %}"
+                   class="text-decoration-none">
+                    Register here
+                </a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome to Tweet World
+{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center text-center"
+     style="min-height: 80vh;">
+<div style="max-width: 650px;">
+    <div class="fs-1 mb-3">
+        🐦
+    </div>
+    <h1 class="display-3 fw-bold mb-3">
+        Welcome to Tweet World
+    </h1>
+    <p class="lead text-secondary mb-4">
+        Share your thoughts, express yourself,
+        and connect with the world.
+    </p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{% url 'tweet_list' %}"
+           class="btn btn-primary btn-lg px-4 rounded-pill">
+            Explore Tweets
+        </a>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'register' %}"
+               class="btn btn-outline-light btn-lg px-4 rounded-pill">
+                Get Started
+            </a>
+        {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}
