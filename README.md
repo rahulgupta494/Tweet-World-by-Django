@@ -125,7 +125,7 @@ The screenshots below are included in this repository under `tweet-world-screens
 
 The landing page introduces Tweet World and provides options to explore tweets or create an account.
 
-![Tweet World Welcome Page](wellcomepage.png)
+![Tweet World Welcome Page](welcomepage.png)
 
 ---
 
